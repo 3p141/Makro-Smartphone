@@ -11,8 +11,8 @@ public class WebsiteController {
 		return "start";
 	}
 
-	@GetMapping("/clock")
-	public String showClock(){
-		return "clock";
+	@GetMapping("/client")
+	public String showClient(){
+		return "client";
 	}
 }
