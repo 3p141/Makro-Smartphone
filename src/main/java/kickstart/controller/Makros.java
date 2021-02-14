@@ -7,17 +7,34 @@ import java.util.ArrayList;
 public class Makros {
     Robot r;
 
-    public void Makros() throws AWTException {
+    public Makros() throws AWTException {
         Robot r = new Robot();
         this.r = r;
     }
 
+    /**
+     * This functions executes {@link #pressRelease(String)} witch each String from
+     * the Array
+     * 
+     * @param array given from {@link ClientController#eceM1()},
+     *              {@link ClientController#eceM2()},
+     *              {@link ClientController#eceM3()},
+     *              {@link ClientController#eceM4()},
+     *              {@link ClientController#eceM5()},
+     *              {@link ClientController#eceM6()},
+     *              {@link ClientController#eceM7()},
+     *              {@link ClientController#eceM8()},
+     *              {@link ClientController#eceM9()}.
+     */
     public void execute(ArrayList<String> array) {
         for (int i = 0; i < array.size(); i++) {
             pressRelease(array.get(i));
         }
     }
 
+    /**
+     * This function translates String commands to key stokes.
+     */
     public void pressRelease(String exeCode) {
         switch (exeCode) {
             case "aStart":
@@ -235,9 +252,9 @@ public class Makros {
             case "altStart":
                 r.keyPress(KeyEvent.VK_ALT);
                 break;
-                
+
             case "altGrStart":
-            r.keyPress(KeyEvent.VK_ALT_GRAPH);
+                r.keyPress(KeyEvent.VK_ALT_GRAPH);
                 break;
 
             case "f1Start":
@@ -360,8 +377,7 @@ public class Makros {
                 r.keyPress(KeyEvent.VK_BACK_SPACE);
                 break;
 
-            
-                case "aStop":
+            case "aStop":
                 r.keyRelease(KeyEvent.VK_A);
                 break;
 
@@ -576,9 +592,9 @@ public class Makros {
             case "altStop":
                 r.keyRelease(KeyEvent.VK_ALT);
                 break;
-                
+
             case "altGrStop":
-            r.keyRelease(KeyEvent.VK_ALT_GRAPH);
+                r.keyRelease(KeyEvent.VK_ALT_GRAPH);
                 break;
 
             case "f1Stop":
@@ -701,7 +717,9 @@ public class Makros {
                 r.keyRelease(KeyEvent.VK_BACK_SPACE);
                 break;
 
-            
+            default:
+                return;
+
         }
     }
 }

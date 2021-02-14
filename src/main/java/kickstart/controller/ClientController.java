@@ -1,10 +1,13 @@
 package kickstart.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+
+/**
+ * This class recieves key presses and executes the Makro with array from repository.
+ */
 public class ClientController {
     @RequestMapping(value="/M1")
     public String eceM1(){
